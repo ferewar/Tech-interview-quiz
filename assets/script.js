@@ -3,12 +3,17 @@ const questions = [
     { question: "What keyword is used to declare a variable in Javascript?", answers: ["var", "let", "const", "all of them"], correctAnswer: "all of them" },
     { question: "What is the purpose of template literals in JavaScript?", answers: ["To declare variables", "To create functions", "To enable asynchronous programing", "To concatenate strings with embedded expressions"], correctAnswer:"To concatenate strings with embedded expressions"},
     { question: "How do you comment a single line in JavaScript?", answers: ["<!--comment-->", "/*comment*/", "//comment", "--comment--"], correctAnswer: "//comment" },
+    { question: "What is the purpose of the call and apply methods in JavaScript?", answers:["to call a function immediately", "To invoke a function with a given 'this' value", "to apply a function to an array", "both first and second are correct"], correctAnswer:"both first and second are correct"},
+    { question: "What is the difference between 'null' and 'undefined'?", answers: [" They are the same", "'null is an object and 'undefined' its a number", "'null' represents the intentional absence of any object value, 'undefined' is assigned to a variable that hasnt been declared"], correctAnswer: "'null' represents the intetional absence of any object value, 'undefined' is assigned to a variable that hasnt been declared"},
     { question: "Which function is used to print something to the console?", answers: ["log()", "print()", "console.log()", "display()"], correctAnswer: "console.log()" },
     { question: "What is the purpose of the === operator in javascript?", answers: ["Assignment", "Equality comparison", "Addition", "Logican AND"], correctAnswer: "Equality comparison" },
     { question: "How do you create an array in Javascript?", answers: ["var myArray={}", "var myArray=[]", "array myArray=[]", "set myArray=new Array()"], correctAnswer: "var myArray=[]" },
     { question: "What is the output of the following code snippet?\n\n```javascript\nconsole.log(1 + '1' - 1);\n```", answers: [ "11", " 1", "10", "2"], correctAnswer: "2"},
     { question: "What is a closure in JavaScript", answers: ["A specific type of function", "A combination of a function and the lexical environment within which that function was declared", "A way to close a program", "A way to lock variables"], correctAnswer:"A combination of a function and the lexical environment within which that function was declared"},
-    { question: "What is the this keyword in JavaScript?", answers: ["It refers to the current object", "It refers to the previous object", "It refers to the global object", "It refers to the parent object"], correctAnswer:"It refers to the current object"}
+    { question: "What is the this keyword in JavaScript?", answers: ["It refers to the current object", "It refers to the previous object", "It refers to the global object", "It refers to the parent object"], correctAnswer:"It refers to the current object"},
+    { question: "What is the event loop in JavaScript?", answers: [ "A loop that iterates over events", "A mechanism that allows javaScript to execute asynchronous code", "A loop that runs continuously without stopping", "An event handler function"], correctAnswer:"A mechanism that allows javaScript to execute asynchronous code"},
+    { question: "Which of the following is an example of a higher-order function?", answers: ["map()", "filter()", "both 1 and 2", "none of the above"], correctAnswer: "both 1 and 2"},
+    { question: "What is a Promise in JavaScript?", answers: ["A guarantee that a function will always return a value", "A value that may produce a value in the future", "A function that is guaranteed to execute", "A statement that ensures the code is error-free"], correctAnswer: "A value that may produce a value in the future"}
 ];
 //Start variables to keep track of the quizz
 let currentQuestionIndex = 0;
@@ -155,4 +160,27 @@ function showHighScores() {
     } else {
         highScoresContainer.innerHTML += "<p>No high scores available. Start playing to make some!</p>";
     }
+}
+//added a button to switch between dark and light mode
+const toggleModeBtn = document.getElementById("toggle-mode-btn");
+let isNightMode = false;
+
+toggleModeBtn.addEventListener("click", toggleMode);
+
+function toggleMode() {
+    const body = document.body;
+
+    if (isNightMode) {
+        // Switch to light mode
+        body.style.backgroundColor = "#fff";
+        body.style.color = "#000";
+        toggleModeBtn.textContent = "Night Mode";
+    } else {
+        // Switch to night mode
+        body.style.backgroundColor = "#000";
+        body.style.color = "#fff";
+        toggleModeBtn.textContent = "Light Mode";
+    }
+
+    isNightMode = !isNightMode;
 }
