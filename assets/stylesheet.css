@@ -32,7 +32,7 @@ h1 {
     border: 2px solid #333;
     border-radius: 50%;
     background-color: #fff;
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 #answer-buttons button:hover {
@@ -55,7 +55,7 @@ h1 {
     background-color: #333;
     color: #fff;
     border: none;
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 #high-scores-container {
@@ -73,5 +73,5 @@ h1 {
     background-color: #333;
     color: #fff;
     border: none;
-    cursor: pointer;
+    cursor: crosshair;
 }
