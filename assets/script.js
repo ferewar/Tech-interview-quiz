@@ -159,6 +159,7 @@ function showHighScores() {
         highScoresContainer.appendChild(scoresList);
     } else {
         highScoresContainer.innerHTML += "<p>No high scores available. Start playing to make some!</p>";
+        
     }
 }
 //added a button to switch between dark and light mode
@@ -184,3 +185,8 @@ function toggleMode() {
 
     isNightMode = !isNightMode;
 }
+
+const highScoresBtn = document.getElementById("high-scores-btn");
+
+// Add event listener for the button click
+highScoresBtn.addEventListener("click", showHighScores);
